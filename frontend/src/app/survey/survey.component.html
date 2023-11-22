@@ -75,12 +75,14 @@
         <button type="submit" class="btn btn-primary button">Submit</button>
         <button type="reset" class="btn btn-secondary ml-2">Reset</button>
         <br><br>
-        <div *ngIf="showErrorNotification" class="alert alert-danger">
-            Error while submitting the form. Make sure you've filled all fields correctly
-        </div>
-        <div *ngIf="showSuccessNotification" class="alert alert-success">
-            Survey submitted successfully!
-        </div>
+        <div id="message">
+            <div *ngIf="showErrorMessage" class="alert alert-danger">
+                Error while submitting the form. Make sure you've filled all fields correctly
+            </div>
+            <div *ngIf="showSuccessMessage" class="alert alert-success">
+                Survey submitted successfully!
+            </div>    
+        </div>        
         <br><br>
     </form>
 </div>

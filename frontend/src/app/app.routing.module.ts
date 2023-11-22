@@ -7,7 +7,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 const routes: Routes = [
   { path: 'home', component: WelcomeComponent},
   { path: 'survey', component: SurveyComponent },
-  { path: 'retrieve', component: DisplaySurveysComponent}
+  { path: 'retrieve', component: DisplaySurveysComponent},
+  { path: 'survey/:id', component: SurveyComponent },
 ];
 
 @NgModule({

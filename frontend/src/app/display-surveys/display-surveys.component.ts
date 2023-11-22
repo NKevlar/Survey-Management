@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../app.service';
-import { Survey } from '../Survey';
+import { Survey } from '../Survey'
 
 @Component({
   selector: 'app-display-surveys',
@@ -9,8 +10,9 @@ import { Survey } from '../Survey';
 })
 export class DisplaySurveysComponent implements OnInit {
 
-  constructor(private apiService: ApiService ) {}
+  constructor(private apiService: ApiService, private router: Router ) {}
   surveyDetails: Survey[] = []
+  surveyId: number | null = null;
   
   ngOnInit() {
     this.apiService.fetchAllsurveys().then(() => {
@@ -18,4 +20,7 @@ export class DisplaySurveysComponent implements OnInit {
     })
   }
 
+  deleteSurvey(surveyId: number) {
+    this.apiService.deleteSurveyDataById(surveyId).then(() => window.location.reload())
+  }
 }

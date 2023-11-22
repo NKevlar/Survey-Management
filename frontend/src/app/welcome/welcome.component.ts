@@ -16,9 +16,9 @@ export class WelcomeComponent implements OnInit  {
   ngOnInit() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.showWelcome = ((window.location.pathname !== '/survey') && (window.location.pathname !== '/retrieve'));
+        const excludeWelcomePaths = ['/survey*', '/retrieve', '/update']
+        this.showWelcome = !excludeWelcomePaths.some(path => new RegExp(path).test(window.location.pathname));
       }
     });
   }
-
 }
