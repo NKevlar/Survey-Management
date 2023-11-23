@@ -66,6 +66,15 @@ export class SurveyComponent {
         likelihoodRecommendation: this.surveyDetail.likelihoodRecommendation,
         additionalComments: this.surveyDetail.additionalComments
       });
+      this.likedFeaturesOptions.forEach((feature) => {
+        const checkbox = document.getElementById(`likes-${feature}`) as HTMLInputElement;
+        checkbox.checked = this.surveyDetail.likedFeatures.includes(feature)
+      });
+      this.interestedSourcesOptions.forEach((source) => {
+        const checkbox = document.getElementById(`interest-${source}`) as HTMLInputElement;
+        checkbox.checked = this.surveyDetail.interestedSources.includes(source)
+      });
+  
     })
   }
   
