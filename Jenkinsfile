@@ -12,16 +12,18 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "pwd"
-                    sh 'rm -rf *.war'
-                    sh 'cd backend'
-                    sh 'pwd'
-                    sh 'ls'
-                    sh 'mvn clean install'
-                    sh 'cp ./target/survey-0.0.1-SNAPSHOT.war ./../ROOT.war'
-                    sh "docker login -u kevlar2410 -p ${DOCKERHUB_PASS}"
-                    sh "docker build -t ${DOCKER_IMAGE_NAME} ."
+                    sh """
+                    pwd
+                    rm -rf *.war
+                    cd backend
+                    pwd
+                    ls
+                    mvn clean install
+                    cp ./target/survey-0.0.1-SNAPSHOT.war ./../ROOT.war
+                    docker login -u kevlar2410 -p ${DOCKERHUB_PASS}
+                    docker build -t ${DOCKER_IMAGE_NAME} .
                     echo "Docker Build success"
+                    """
                 }
             }
         }
