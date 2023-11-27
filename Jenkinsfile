@@ -16,6 +16,7 @@ pipeline {
                     sh 'rm -rf *.war'
                     sh 'cd backend'
                     sh 'pwd'
+                    sh 'ls'
                     sh 'mvn clean install'
                     sh 'cp ./target/survey-0.0.1-SNAPSHOT.war ./../ROOT.war'
                     sh "docker login -u kevlar2410 -p ${DOCKERHUB_PASS}"
