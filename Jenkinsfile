@@ -45,8 +45,7 @@ pipeline {
                         sh """
                         chmod 777 ./
                         pwd
-                        cp /home/ubuntu/config ./config
-                        export KUBECONFIG=config
+                        export KUBECONFIG=/home/ubuntu/config
                         kubectl config get-contexts
                         kubectl config view
                         kubectl set image deployment/survey-deployment container-0=kevlar2410/survey-api:${env.BUILD_NUMBER}
