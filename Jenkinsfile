@@ -19,7 +19,7 @@ pipeline {
                     cd backend
                     pwd
                     ls
-                    mvn clean install
+                    sudo mvn clean install
                     cp ./target/survey-0.0.1-SNAPSHOT.war ./../ROOT.war
                     docker login -u kevlar2410 -p ${DOCKERHUB_PASS}
                     docker build -t ${DOCKER_IMAGE_NAME} .
