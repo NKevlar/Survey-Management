@@ -32,6 +32,7 @@ pipeline {
         stage("Pushing Image to DockerHub") {
             steps {
                 script {
+                    sh "chmod 777 ./"
                     sh "docker login -u kevlar2410 -p ${DOCKERHUB_PASS}"
                     sh "docker push ${DOCKER_IMAGE_NAME}"
                     echo "Docker push success"
@@ -43,7 +44,9 @@ pipeline {
             steps {
                 script {
                         sh """
+                        chmod 777 ./
                         pwd
+                        cp /home/ubuntu/config ./config
                         export KUBECONFIG=config
                         kubectl config get-contexts
                         kubectl config view
