@@ -13,6 +13,7 @@ pipeline {
                 script {
                     checkout scm
                     sh """
+                    chmod 777 ./
                     pwd
                     rm -rf *.war
                     cd backend
