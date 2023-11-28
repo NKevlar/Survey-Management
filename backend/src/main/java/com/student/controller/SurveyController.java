@@ -68,7 +68,7 @@ public class SurveyController {
         }
         surveyService.updateEntity(id, updatedSurvey);
 
-        return new ResponseEntity<>("Survey data updated successfully.", HttpStatus.OK);
+        return new ResponseEntity<>("Survey data updated successfully for Survey Id " + id, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
