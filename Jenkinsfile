@@ -48,7 +48,7 @@ pipeline {
                         export KUBECONFIG=/home/ubuntu/config
                         kubectl config get-contexts
                         kubectl config view
-                        kubectl set image deployment/survey-deployment container-0=kevlar2410/survey-api:${env.BUILD_NUMBER}
+                        kubectl set image deployment/survey-development container-0=kevlar2410/survey-api:${env.BUILD_NUMBER}
                         echo "Deployment success"
                         """
                     }
