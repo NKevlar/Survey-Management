@@ -18,8 +18,7 @@ pipeline {
                     rm -rf *.war
                     cd backend
                     mvn clean install
-                    cp ./target/survey-0.0.1-SNAPSHOT.war ./../ROOT.war
-                    cd ..
+                    cp ./target/survey-0.0.1-SNAPSHOT.war ./ROOT.war
                     docker login -u kevlar2410 -p ${DOCKERHUB_PASS}
                     docker build -t ${DOCKER_IMAGE_NAME} .
                     echo "Docker Build success"
@@ -32,6 +31,7 @@ pipeline {
             steps {
                 script {
                     sh "chmod 777 ./"
+                    sh "cd backend"
                     sh "docker login -u kevlar2410 -p ${DOCKERHUB_PASS}"
                     sh "docker push ${DOCKER_IMAGE_NAME}"
                     echo "Docker push success"

@@ -1,0 +1,15 @@
+.header-box {
+    border: 5px solid #006633;
+    box-shadow: 5px 5px 10px #888888;
+    padding: 10px;
+    background-color: #FFCC33;
+}
+
+h1 {
+    color: #006633;
+}
+
+button {
+    margin-right: 20px;
+    margin-left: 20px;
+}

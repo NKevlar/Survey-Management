@@ -1,0 +1,33 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.header-box {
+    border: 5px solid #006633;
+    box-shadow: 5px 5px 10px #888888;
+    padding: 10px;
+    background-color: #FFCC33;
+}
+
+h1 {
+    color: #006633;
+}
+
+button {
+    background-color: #006633 !important;
+    border-color: #006633 !important;
+    color: white;
+}
+
+.red-button {
+    background-color: rgb(174, 5, 5) !important;
+    border-color: rgb(174, 5, 5) !important;
+}
+
+.form {
+    margin-left: 20px;
+}
+
+.required {
+    color: red;
+}

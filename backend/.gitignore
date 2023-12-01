@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+## ignoring war
+ROOT.war

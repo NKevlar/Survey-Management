@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  frontend-angular:
+    build:
+      context: ./frontend-angular
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+
+  # frontend-react:
+  #   build:
+  #     context: ./frontend-react
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - backend
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8081:8080"
+

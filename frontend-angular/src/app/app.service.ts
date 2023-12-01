@@ -9,7 +9,7 @@ import { Survey } from './Survey';
 })
 export class ApiService {
 
-  private apiUrl = 'http://localhost:8080/api/surveys/';
+  private apiUrl = 'http://localhost:8081/api/surveys/';
   headers = new AxiosHeaders({ 'Content-Type': 'application/json' });
   showSuccessNotification = false;
   showErrorNotification = false;
