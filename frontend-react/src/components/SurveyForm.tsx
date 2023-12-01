@@ -8,6 +8,11 @@ function SurveyForm() {
   const navigate = useNavigate();
   const { id } = useParams();
 
+  const likedFeaturesOptions = ['students', 'location', 'campus', 'atmosphere', 'dorm-rooms', 'sports'];
+  const interestedSourcesOptions = ['friends', 'television', 'internet', 'other'];
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
   const apiService = ApiService
   const [updateSurveyId, setUpdateSurveyId] = useState(id ? parseInt(id) : null);
   const [surveyForm, setSurveyForm] = useState<Survey>({
@@ -25,11 +30,6 @@ function SurveyForm() {
     likelihoodRecommendation: '',
     additionalComments: ''
   });
-
-  const likedFeaturesOptions = ['students', 'location', 'campus', 'atmosphere', 'dorm-rooms', 'sports'];
-  const interestedSourcesOptions = ['friends', 'television', 'internet', 'other'];
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   useEffect(() => {
     const surveyId = id;
